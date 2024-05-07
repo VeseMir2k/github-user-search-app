@@ -5,6 +5,13 @@ export default {
     fontFamily: {
       space_mono: ['Space Mono'],
     },
+    fontSize: {
+      sm: '13px',
+      base: '15px',
+      xl: '16px',
+      '2xl': '22px',
+      '3xl': '26px',
+    },
     lineHeight: {
       line_height_1: '38px',
       line_height_2: '33px',
