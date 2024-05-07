@@ -6,6 +6,7 @@ export default {
       space_mono: ['Space Mono'],
     },
     fontSize: {
+      xs: '11px',
       sm: '13px',
       base: '15px',
       xl: '16px',
