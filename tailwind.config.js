@@ -14,11 +14,11 @@ export default {
       '3xl': '26px',
     },
     lineHeight: {
-      line_height_1: '38px',
-      line_height_2: '33px',
-      line_height_3: '25px',
-      line_height_4: '24px',
-      line_height_5: '20px',
+      1: '38px',
+      2: '33px',
+      3: '25px',
+      4: '24px',
+      5: '20px',
     },
     colors: {
       background_primary: '#F6F8FF',
