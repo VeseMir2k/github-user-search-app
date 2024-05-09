@@ -11,10 +11,10 @@ const getTheme = () => {
   const theme = localStorage.getItem('theme');
 
   if (!theme) {
-    localStorage.setItem('theme', 'dark-theme');
-    return 'dark-theme';
+    localStorage.setItem('theme', 'dark');
+    return 'dark';
   } else {
-    return 'light-theme';
+    return 'light';
   }
 };
 
@@ -22,10 +22,10 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState(getTheme);
 
   const toggleTheme = () => {
-    if (theme === 'dark-theme') {
-      setTheme('light-theme');
+    if (theme === 'dark') {
+      setTheme('light');
     } else {
-      setTheme('dark-theme');
+      setTheme('dark');
     }
   };
 
