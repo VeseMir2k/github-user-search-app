@@ -1,8 +1,10 @@
 import Logo from './Logo';
+import SwitchTheme from './SwitchTheme';
 
 const Header = () => (
-  <header>
+  <header className='flex items-center justify-between'>
     <Logo />
+    <SwitchTheme />
   </header>
 );
 
