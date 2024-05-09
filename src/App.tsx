@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div
-      className={`${theme} font-space_mono bg-background_primary dark:bg-background_primary_dark h-[100vh] px-[24px] py-[30px]`}
+      className={`${theme === 'dark' ? 'light' : 'dark'} font-space_mono bg-background_primary dark:bg-background_primary_dark h-[100vh] px-[24px] py-[30px]`}
     >
       <Header />
     </div>

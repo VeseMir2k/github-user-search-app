@@ -14,7 +14,7 @@ const getTheme = () => {
     localStorage.setItem('theme', 'dark');
     return 'dark';
   } else {
-    return 'light';
+    return theme;
   }
 };
 
