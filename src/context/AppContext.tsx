@@ -11,8 +11,13 @@ const getTheme = () => {
   const theme = localStorage.getItem('theme');
 
   if (!theme) {
-    localStorage.setItem('theme', 'dark');
-    return 'dark';
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      localStorage.setItem('theme', 'dark');
+      return 'dark';
+    } else {
+      localStorage.setItem('theme', 'light');
+      return 'light';
+    }
   } else {
     return theme;
   }
