@@ -7,39 +7,21 @@ interface ThemeContextProps {
 
 const ThemeContext = createContext<ThemeContextProps>({} as ThemeContextProps);
 
-const getTheme = () => {
-  const theme = localStorage.getItem('theme');
-
-  if (!theme) {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      localStorage.setItem('theme', 'dark');
-      return 'dark';
-    } else {
-      localStorage.setItem('theme', 'light');
-      return 'light';
-    }
-  } else {
-    return theme;
-  }
-};
-
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState(getTheme);
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('theme');
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+    return storedTheme ? storedTheme : preferredTheme;
+  });
 
   const toggleTheme = () => {
-    if (theme === 'dark') {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
   useEffect(() => {
-    const refreshTheme = () => {
-      localStorage.setItem('theme', theme);
-    };
-
-    refreshTheme();
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
