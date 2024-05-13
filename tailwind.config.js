@@ -33,6 +33,9 @@ export default {
       red: '#F74646',
       grey: '',
     },
+    boxShadow: {
+      input_shadow: '0 16px 30px -10px rgba(70, 96, 187, 0.20)',
+    },
     extend: {},
   },
   plugins: [],
