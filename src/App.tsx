@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import './App.css';
-import Header from './components/header/Header';
+import Header from './components/header';
 import { ThemeContext } from './context/AppContext';
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div
-      className={`${theme === 'dark' ? 'dark' : 'light'} font-space_mono bg-background_primary dark:bg-background_primary_dark h-[100vh] px-[24px] py-[30px]`}
+      className={`${theme === 'dark' ? 'dark' : 'light'} h-[100vh] bg-background_primary px-[24px] py-[30px] font-space_mono dark:bg-background_primary_dark`}
     >
       <Header />
     </div>
