@@ -30,11 +30,12 @@ export default {
       background_secondary_dark: '#1E2A47',
       white: '#FFFFFF',
       blue: '#0079FF',
+      light_blue: '#60ABFF',
       red: '#F74646',
       grey: '',
     },
     boxShadow: {
-      input_shadow: '0 16px 30px -10px rgba(70, 96, 187, 0.20)',
+      shadow: '0 16px 30px -10px rgba(70, 96, 187, 0.20)',
     },
     extend: {},
   },
