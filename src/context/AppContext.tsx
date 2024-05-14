@@ -7,7 +7,7 @@ interface ThemeContextProps {
 
 interface UserContextProps {
   user: string;
-  dataUser: object;
+  userData: object;
 }
 
 const ThemeContext = createContext<ThemeContextProps>({} as ThemeContextProps);
@@ -34,10 +34,24 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 };
 
 const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState('');
-  const [dataUser, setDataUser] = useState({});
+  const [user, setUser] = useState('octocat');
+  const [userData, setUserData] = useState({});
 
-  return <UserContext.Provider value={{ user, dataUser }}>{children}</UserContext.Provider>;
+  const fetchUserData = async () => {
+    try {
+      const response = await fetch(`https://api.github.com/users/${user}`);
+      const data = await response.json();
+      setUserData(data);
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  return <UserContext.Provider value={{ user, userData }}>{children}</UserContext.Provider>;
 };
 
 const AppProvider = ({ children }: { children: ReactNode }) => {
@@ -48,4 +62,4 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export { AppProvider, ThemeContext };
+export { AppProvider, ThemeContext, UserContext };
