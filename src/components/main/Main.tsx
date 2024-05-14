@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../../context/AppContext';
 import Search from './search';
+import User from './user';
 
 const Main = () => {
   const { userData } = useContext(UserContext);
@@ -8,7 +9,7 @@ const Main = () => {
   return (
     <main className='mt-[36px]'>
       <Search />
-      {console.log(userData)}
+      <User userData={userData} />
     </main>
   );
 };
