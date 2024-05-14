@@ -5,7 +5,13 @@ interface ThemeContextProps {
   toggleTheme: () => void;
 }
 
+interface UserContextProps {
+  user: string;
+  dataUser: object;
+}
+
 const ThemeContext = createContext<ThemeContextProps>({} as ThemeContextProps);
+const UserContext = createContext<UserContextProps>({} as UserContextProps);
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState(() => {
@@ -27,8 +33,19 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };
 
+const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState('');
+  const [dataUser, setDataUser] = useState({});
+
+  return <UserContext.Provider value={{ user, dataUser }}>{children}</UserContext.Provider>;
+};
+
 const AppProvider = ({ children }: { children: ReactNode }) => {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider>
+      <UserProvider>{children}</UserProvider>
+    </ThemeProvider>
+  );
 };
 
 export { AppProvider, ThemeContext };
