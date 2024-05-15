@@ -1,10 +1,8 @@
-import React from 'react';
-
-interface AvatarProps {
+interface Props {
   avatar_url: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ avatar_url }) => {
+const Avatar: React.FC<Props> = ({ avatar_url }) => {
   return <img src={avatar_url} alt='' />;
 };
 

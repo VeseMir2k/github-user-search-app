@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/AppContext';
 
-const SwitchTheme = () => {
+const SwitchTheme: React.FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <button
       onClick={() => toggleTheme()}
-      className='text-text_secondary hover:text-text_primary flex dark:text-white dark:hover:text-[#90A4D4]'
+      className='flex text-text_secondary hover:text-text_primary dark:text-white dark:hover:text-[#90A4D4]'
     >
       <span className='mr-[16px] text-sm font-bold tracking-[2.5px]'>
         {theme === 'dark' ? 'LIGHT' : 'DARK'}

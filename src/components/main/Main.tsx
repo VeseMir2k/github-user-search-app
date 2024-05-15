@@ -3,7 +3,7 @@ import { UserContext } from '../../context/AppContext';
 import Search from './search';
 import User from './user';
 
-const Main = () => {
+const Main: React.FC = () => {
   const { userData } = useContext(UserContext);
 
   return (

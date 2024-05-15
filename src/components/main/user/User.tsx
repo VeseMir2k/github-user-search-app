@@ -1,16 +1,15 @@
-import Avatar from './header/Avatar';
+import Header from './header';
 
-interface UserData {
-  avatar_url: string;
+interface Props {
+  userData: object;
 }
 
-interface UserProps {
-  userData: UserData;
-}
-
-const User: React.FC<UserProps> = ({ userData }) => {
-  const { avatar_url } = userData;
-  return <Avatar avatar_url={avatar_url} />;
+const User: React.FC<Props> = ({ userData }) => {
+  return (
+    <div>
+      <Header userData={userData} />
+    </div>
+  );
 };
 
 export default User;
