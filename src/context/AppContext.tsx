@@ -34,7 +34,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 };
 
 const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState('octocat');
+  const [user, setUser] = useState('deoomen');
   const [userData, setUserData] = useState({});
 
   const fetchUserData = async () => {
