@@ -3,4 +3,5 @@ export interface UserData {
   name: string;
   login: string;
   created_at: string;
+  bio: string;
 }
