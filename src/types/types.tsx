@@ -4,4 +4,7 @@ export interface UserData {
   login: string;
   created_at: string;
   bio: string;
+  public_repos: string;
+  followers: string;
+  following: string;
 }
