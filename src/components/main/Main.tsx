@@ -8,7 +8,7 @@ const Main: React.FC = () => {
   const { userData } = useContext(UserContext);
 
   return (
-    <main className='mt-[36px]'>
+    <main className='mx-auto mt-[36px]'>
       <Search />
       <User userData={userData as UserData} />
     </main>
