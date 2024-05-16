@@ -8,6 +8,8 @@ interface ThemeContextProps {
 interface UserContextProps {
   user: string;
   userData: object;
+  updateUser: (value: string) => void;
+  updateUserData: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextProps>({} as ThemeContextProps);
@@ -37,6 +39,14 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState('deoomen');
   const [userData, setUserData] = useState({});
 
+  const updateUser = (value: string) => {
+    setUser(value);
+  };
+
+  const updateUserData = () => {
+    fetchUserData();
+  };
+
   const fetchUserData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${user}`);
@@ -51,7 +61,11 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     fetchUserData();
   }, []);
 
-  return <UserContext.Provider value={{ user, userData }}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={{ user, userData, updateUser, updateUserData }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
 const AppProvider = ({ children }: { children: ReactNode }) => {
