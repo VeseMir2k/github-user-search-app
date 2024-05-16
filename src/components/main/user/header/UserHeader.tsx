@@ -12,11 +12,13 @@ const UserHeader: React.FC<Props> = ({ name, login, created_at }) => {
   };
 
   return (
-    <>
+    <div className='flex flex-col'>
       <p className='text-xl font-bold'>{name}</p>
       <p className='text-sm text-blue'>@{login}</p>
-      {created_at && <p className='text-sm text-text_secondary'>Joined {formatDate(created_at)}</p>}
-    </>
+      {created_at && (
+        <p className='mt-[6px] text-sm text-text_secondary'>Joined {formatDate(created_at)}</p>
+      )}
+    </div>
   );
 };
 
