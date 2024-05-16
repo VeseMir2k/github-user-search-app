@@ -1,7 +1,8 @@
+import { UserData } from '../../../types/types';
 import Header from './header';
 
 interface Props {
-  userData: object;
+  userData: UserData;
 }
 
 const User: React.FC<Props> = ({ userData }) => {

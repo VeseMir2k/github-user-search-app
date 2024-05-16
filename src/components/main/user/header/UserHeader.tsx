@@ -13,9 +13,9 @@ const UserHeader: React.FC<Props> = ({ name, login, created_at }) => {
 
   return (
     <>
-      <div>{name}</div>
-      <div>@{login}</div>
-      <div>Joined {created_at && formatDate(created_at)}</div>
+      <p className='text-xl font-bold'>{name}</p>
+      <p className='text-sm text-blue'>@{login}</p>
+      {created_at && <p className='text-sm text-text_secondary'>Joined {formatDate(created_at)}</p>}
     </>
   );
 };

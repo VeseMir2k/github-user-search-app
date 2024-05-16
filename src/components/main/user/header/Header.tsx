@@ -1,15 +1,9 @@
+import { UserData } from '../../../../types/types';
 import Avatar from './Avatar';
 import UserHeader from './UserHeader';
 
-interface UserData {
-  avatar_url: string;
-  name: string;
-  login: string;
-  created_at: string;
-}
-
 interface Props {
-  userData: object;
+  userData: UserData;
 }
 
 const Header: React.FC<Props> = ({ userData }) => {
