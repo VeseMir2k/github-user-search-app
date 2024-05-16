@@ -6,7 +6,7 @@ interface Props {
 
 const User: React.FC<Props> = ({ userData }) => {
   return (
-    <div>
+    <div className='mt-[16px] rounded-[15px] bg-background_secondary px-[24px] pb-[46px] pt-[32px] shadow-shadow'>
       <Header userData={userData} />
     </div>
   );
