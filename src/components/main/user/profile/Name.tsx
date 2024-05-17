@@ -4,7 +4,7 @@ interface Props {
   created_at: string;
 }
 
-const UserHeader: React.FC<Props> = ({ name, login, created_at }) => {
+const Details: React.FC<Props> = ({ name, login, created_at }) => {
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
     const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -22,4 +22,4 @@ const UserHeader: React.FC<Props> = ({ name, login, created_at }) => {
   );
 };
 
-export default UserHeader;
+export default Details;
