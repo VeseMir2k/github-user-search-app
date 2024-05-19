@@ -8,6 +8,7 @@ interface ThemeContextProps {
 interface UserContextProps {
   user: string;
   userData: object;
+  userDataError: boolean;
   updateUser: (value: string) => void;
   updateUserData: () => void;
 }
@@ -38,6 +39,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState('deoomen');
   const [userData, setUserData] = useState({});
+  const [userDataError, setUserDataError] = useState(false);
 
   const updateUser = (value: string) => {
     setUser(value);
@@ -51,6 +53,12 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     try {
       const response = await fetch(`https://api.github.com/users/${user}`);
       const data = await response.json();
+
+      if (!response.ok) {
+        setUserDataError(true);
+        throw new Error('Failed to fetch user data');
+      }
+      setUserDataError(false);
       setUserData(data);
     } catch (error) {
       console.error('Error fetching user data:', error);
@@ -62,7 +70,7 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, userData, updateUser, updateUserData }}>
+    <UserContext.Provider value={{ user, userData, userDataError, updateUser, updateUserData }}>
       {children}
     </UserContext.Provider>
   );
