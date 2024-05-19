@@ -11,7 +11,7 @@ const Info: React.FC<Props> = ({ userData }) => {
   const { blog, location, twitter_username, company } = userData;
 
   return (
-    <div>
+    <div className='mt-[24px] flex flex-col gap-[16px]'>
       <InfoSection icon={faLocationDot} text={location} />
       <InfoSection icon={faLink} text={blog} link={blog} />
       <InfoSection

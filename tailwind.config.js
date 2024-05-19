@@ -32,7 +32,8 @@ export default {
       blue: '#0079FF',
       light_blue: '#60ABFF',
       red: '#F74646',
-      grey: '',
+      grey: '#A4B5CD',
+      grey_dark: '#8E94A3',
     },
     boxShadow: {
       shadow: '0 16px 30px -10px rgba(70, 96, 187, 0.20)',
