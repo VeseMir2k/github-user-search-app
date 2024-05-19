@@ -8,10 +8,13 @@ interface Props {
 }
 
 const InfoSection: React.FC<Props> = ({ icon, text, link }) => {
+  const textElement = link ? <a href={link}>{text}</a> : <span>{text}</span>;
+  const notAvailableElement = <span>Not Available</span>;
+
   return (
     <p>
       <FontAwesomeIcon icon={icon} />
-      {!text ? <span>Not Available</span> : link ? <a href={link}>{text}</a> : <span>{text}</span>}
+      {!text ? notAvailableElement : textElement}
     </p>
   );
 };
