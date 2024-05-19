@@ -49,16 +49,20 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     fetchUserData();
   };
 
+  const updateUserDataError = (value: boolean) => {
+    setUserDataError(value);
+  };
+
   const fetchUserData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${user}`);
       const data = await response.json();
 
       if (!response.ok) {
-        setUserDataError(true);
+        updateUserDataError(true);
         throw new Error('Failed to fetch user data');
       }
-      setUserDataError(false);
+      updateUserDataError(false);
       setUserData(data);
     } catch (error) {
       console.error('Error fetching user data:', error);
