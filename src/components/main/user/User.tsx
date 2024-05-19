@@ -1,5 +1,6 @@
 import { UserData } from '../../../types/types';
 import Biography from './Biography';
+import Info from './info';
 import Loader from './Loader';
 import Profile from './profile';
 import Statistics from './statistics';
@@ -18,6 +19,7 @@ const User: React.FC<Props> = ({ userData }) => {
       <Profile userData={userData} />
       {bio && <Biography bio={bio} />}
       <Statistics userData={userData} />
+      <Info />
     </div>
   ) : (
     <Loader />
