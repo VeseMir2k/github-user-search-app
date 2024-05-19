@@ -1,14 +1,25 @@
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faBuilding, faLink, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { UserData } from '../../../../types/types';
 import InfoSection from './InfoSection';
 
-const Info: React.FC = () => {
+interface Props {
+  userData: UserData;
+}
+
+const Info: React.FC<Props> = ({ userData }) => {
+  const { blog, location, twitter_username, company } = userData;
+
   return (
     <div>
-      <InfoSection icon={faLocationDot} text='San Francisco' />
-      <InfoSection icon={faLink} text='https://github.blog' />
-      <InfoSection icon={faXTwitter} text='Not Available' />
-      <InfoSection icon={faBuilding} text='@github' />
+      <InfoSection icon={faLocationDot} text={location} />
+      <InfoSection icon={faLink} text={blog} link={blog} />
+      <InfoSection
+        icon={faXTwitter}
+        text={twitter_username}
+        link={`https://twitter.com/${twitter_username}`}
+      />
+      <InfoSection icon={faBuilding} text={company} />
     </div>
   );
 };

@@ -7,4 +7,8 @@ export interface UserData {
   public_repos: string;
   followers: string;
   following: string;
+  location: string;
+  blog: string;
+  twitter_username: string;
+  company: string;
 }

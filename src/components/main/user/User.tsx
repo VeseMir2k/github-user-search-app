@@ -19,7 +19,7 @@ const User: React.FC<Props> = ({ userData }) => {
       <Profile userData={userData} />
       {bio && <Biography bio={bio} />}
       <Statistics userData={userData} />
-      <Info />
+      <Info userData={userData} />
     </div>
   ) : (
     <Loader />

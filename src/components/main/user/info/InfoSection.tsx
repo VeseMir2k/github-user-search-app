@@ -11,7 +11,7 @@ const InfoSection: React.FC<Props> = ({ icon, text, link }) => {
   return (
     <p>
       <FontAwesomeIcon icon={icon} />
-      {link ? <a href={link}>{text}</a> : <span>{text}</span>}
+      {!text ? <span>Not Available</span> : link ? <a href={link}>{text}</a> : <span>{text}</span>}
     </p>
   );
 };
