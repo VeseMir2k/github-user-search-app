@@ -37,7 +37,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 };
 
 const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState('deoomen');
+  const [user, setUser] = useState('octocat');
   const [userData, setUserData] = useState({});
   const [userDataError, setUserDataError] = useState(false);
 
