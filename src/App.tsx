@@ -11,9 +11,9 @@ const App: React.FC = () => {
 
   return (
     <div
-      className={`${themeClass} min-h-screen bg-background_primary p-[24px] font-space_mono sm:flex sm:items-center sm:justify-center sm:px-0  sm:py-[50px] dark:bg-background_primary_dark`}
+      className={`${themeClass} min-h-screen bg-background_primary p-[24px] font-space_mono sm:flex sm:items-center sm:justify-center sm:px-0 sm:py-[50px] dark:bg-background_primary_dark`}
     >
-      <div className='sm:w-[573px] '>
+      <div className='sm:w-[573px] md:w-[730px]'>
         <Header />
         <Main />
       </div>
