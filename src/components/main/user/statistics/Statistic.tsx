@@ -5,9 +5,11 @@ interface Props {
 
 const Statistic: React.FC<Props> = ({ name, statistic }) => {
   return (
-    <div className='flex flex-col gap-[8px] text-center '>
-      <p className='text-xs text-text_secondary dark:text-white'>{name}</p>
-      <p className='text-xl font-bold text-text_primary dark:text-white '>{statistic}</p>
+    <div className='flex flex-col gap-[8px] text-center sm:text-left'>
+      <p className='text-xs text-text_secondary sm:text-sm dark:text-white'>{name}</p>
+      <p className='text-xl font-bold text-text_primary sm:text-2xl dark:text-white '>
+        {statistic}
+      </p>
     </div>
   );
 };

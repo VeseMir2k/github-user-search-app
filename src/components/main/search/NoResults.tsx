@@ -6,7 +6,9 @@ const NoResults: React.FC = () => {
 
   return (
     userDataError && (
-      <div className='absolute right-[100px] text-sm leading-3 text-red'>No results</div>
+      <div className='absolute right-[100px] text-sm leading-3 text-red sm:right-[120px] sm:text-base'>
+        No results
+      </div>
     )
   );
 };

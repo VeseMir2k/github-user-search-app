@@ -19,7 +19,7 @@ const InfoSection: React.FC<Props> = ({ icon, text, link }) => {
 
   return (
     <p
-      className={`flex text-sm ${text ? 'text-text_secondary dark:text-white' : 'dark:text-grey_dark text-grey'}`}
+      className={`flex text-sm sm:text-base ${text ? 'text-text_secondary dark:text-white' : 'dark:text-grey_dark text-grey'}`}
     >
       <div className='mr-[16px] w-[20px]'>
         <FontAwesomeIcon className='text-[16px]' icon={icon} />

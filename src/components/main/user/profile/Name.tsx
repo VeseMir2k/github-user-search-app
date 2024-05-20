@@ -13,9 +13,9 @@ const Details: React.FC<Props> = ({ name, login, created_at }) => {
 
   return (
     <div className='flex flex-col'>
-      <p className='text-xl font-bold text-text_primary dark:text-white'>{name}</p>
-      <p className='text-sm text-blue'>@{login}</p>
-      <p className='mt-[6px] text-sm text-text_secondary dark:text-white'>
+      <p className='text-xl font-bold text-text_primary sm:text-3xl dark:text-white'>{name}</p>
+      <p className='text-sm text-blue sm:text-xl'>@{login}</p>
+      <p className='mt-[6px] text-sm text-text_secondary sm:text-base dark:text-white'>
         Joined {formatDate(created_at)}
       </p>
     </div>
