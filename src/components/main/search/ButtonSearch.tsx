@@ -11,7 +11,7 @@ const ButtonSearch: React.FC = () => {
   return (
     <button
       onClick={handleButton}
-      className='my-[7px] mr-[7px] rounded-[10px] bg-blue px-[16px] py-[12px] text-[14px] font-bold text-white hover:bg-light_blue'
+      className='my-[7px] mr-[7px] rounded-[10px] bg-blue px-[16px] py-[12px] text-sm font-bold text-white hover:bg-light_blue sm:text-xl'
     >
       Search
     </button>
