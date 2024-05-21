@@ -20,12 +20,21 @@ const InfoSection = ({ icon, text, link, colStart, rowStart }: Props) => {
 
   const notAvailableElement = <span>Not Available</span>;
 
+  const colStartVariants: Record<string, string> = {
+    1: 'sm:col-start-1',
+    2: 'sm:col-start-2',
+  };
+  const rowStartVariants: Record<string, string> = {
+    1: 'sm:row-start-1',
+    2: 'sm:row-start-2',
+  };
+
   return (
     <p
       className={`
         flex text-sm sm:col-span-1 sm:row-span-1 sm:text-base
-        sm:col-start-${colStart}
-        sm:row-start-${rowStart}
+        ${colStartVariants[colStart]}
+        ${rowStartVariants[rowStart]}
         ${text ? 'text-text_secondary dark:text-white' : 'text-grey dark:text-grey_dark'}
       `}
     >
