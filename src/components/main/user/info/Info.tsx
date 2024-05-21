@@ -3,13 +3,9 @@ import { faBuilding, faLink, faLocationDot } from '@fortawesome/free-solid-svg-i
 import { UserData } from '../../../../types/types';
 import InfoSection from './InfoSection';
 
-interface Props {
-  userData: UserData;
-}
+type Props = Pick<UserData, 'blog' | 'location' | 'twitter_username' | 'company'>;
 
-const Info = ({ userData }: Props) => {
-  const { blog, location, twitter_username, company } = userData;
-
+const Info = ({ blog, location, twitter_username, company }: Props) => {
   return (
     <div className='mt-[24px] flex flex-col gap-[16px] sm:grid md:col-span-1 md:col-start-2'>
       <InfoSection icon={faLocationDot} text={location} colStart='1' rowStart='1' />
