@@ -10,7 +10,7 @@ interface Props {
 }
 
 const User = ({ userData }: Props) => {
-  const { avatar_url, name, login, created_at, bio } = userData;
+  const { avatar_url, name, login, created_at, bio, public_repos, followers, following } = userData;
 
   return (
     <div className='mt-[16px] rounded-[15px] bg-background_secondary px-[24px] py-[32px] shadow-shadow sm:p-[40px] md:grid md:grid-cols-[auto,1fr] md:p-[48px] dark:bg-background_secondary_dark dark:[box-shadow:none]'>
@@ -19,7 +19,7 @@ const User = ({ userData }: Props) => {
       </div>
       <Profile avatar_url={avatar_url} name={name} login={login} created_at={created_at} />
       {bio && <Biography bio={bio} />}
-      <Statistics userData={userData} />
+      <Statistics public_repos={public_repos} followers={followers} following={following} />
       <Info userData={userData} />
     </div>
   );
