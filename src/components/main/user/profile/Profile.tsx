@@ -2,13 +2,9 @@ import { UserData } from '../../../../types/types';
 import Avatar from './Avatar';
 import Name from './Name';
 
-interface Props {
-  userData: UserData;
-}
+type Props = Pick<UserData, 'avatar_url' | 'name' | 'login' | 'created_at'>;
 
-const Profile = ({ userData }: Props) => {
-  const { avatar_url, name, login, created_at } = userData;
-
+const Profile = ({ avatar_url, name, login, created_at }: Props) => {
   return (
     <div className='flex md:col-span-1 md:col-start-2'>
       <div className='md:hidden'>
