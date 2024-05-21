@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useCallback, useEffect, useState } from 'react';
+import { fetchUserData } from '../services/service';
 import { UserData } from '../types/types';
 
 interface ThemeContextProps {
@@ -46,28 +47,20 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     setUser(value);
   };
 
-  const updateUserData = () => {
-    fetchUserData();
-  };
-
-  const fetchUserData = async () => {
-    try {
-      const response = await fetch(`https://api.github.com/users/${user}`);
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch user data');
+  const updateUserData = useCallback(() => {
+    (async () => {
+      const { data, error } = await fetchUserData(user);
+      if (error) {
+        setUserDataError(true);
+      } else {
+        setUserDataError(false);
+        setUserData(data);
       }
-      setUserDataError(false);
-      setUserData(data);
-    } catch (error) {
-      setUserDataError(true);
-      console.error('Error fetching user data:', error);
-    }
-  };
+    })();
+  }, [user]);
 
   useEffect(() => {
-    fetchUserData();
+    updateUserData();
   }, []);
 
   return (
