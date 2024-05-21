@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from 'react';
+import { createContext, ReactNode, useCallback, useEffect, useState } from 'react';
 import { UserData } from '../types/types';
 
 interface ThemeContextProps {
@@ -26,9 +26,9 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     return storedTheme ? storedTheme : preferredTheme;
   });
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
@@ -50,22 +50,18 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     fetchUserData();
   };
 
-  const updateUserDataError = (value: boolean) => {
-    setUserDataError(value);
-  };
-
   const fetchUserData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${user}`);
       const data = await response.json();
 
       if (!response.ok) {
-        updateUserDataError(true);
         throw new Error('Failed to fetch user data');
       }
-      updateUserDataError(false);
+      setUserDataError(false);
       setUserData(data);
     } catch (error) {
+      setUserDataError(true);
       console.error('Error fetching user data:', error);
     }
   };
