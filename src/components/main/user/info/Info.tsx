@@ -7,19 +7,21 @@ interface Props {
   userData: UserData;
 }
 
-const Info: React.FC<Props> = ({ userData }) => {
+const Info = ({ userData }: Props) => {
   const { blog, location, twitter_username, company } = userData;
 
   return (
-    <div className='mt-[24px] flex flex-col gap-[16px] md:col-span-1 md:col-start-2'>
-      <InfoSection icon={faLocationDot} text={location} />
-      <InfoSection icon={faLink} text={blog} link={blog} />
+    <div className='mt-[24px] flex flex-col gap-[16px] sm:grid md:col-span-1 md:col-start-2'>
+      <InfoSection icon={faLocationDot} text={location} colStart='1' rowStart='1' />
+      <InfoSection icon={faLink} text={blog} link={blog} colStart='1' rowStart='2' />
       <InfoSection
         icon={faXTwitter}
         text={twitter_username}
         link={`https://twitter.com/${twitter_username}`}
+        colStart='2'
+        rowStart='1'
       />
-      <InfoSection icon={faBuilding} text={company} />
+      <InfoSection icon={faBuilding} text={company} colStart='2' rowStart='2' />
     </div>
   );
 };

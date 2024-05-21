@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../../../context/AppContext';
 
-const NoResults: React.FC = () => {
+const NoResults = () => {
   const { userDataError } = useContext(UserContext);
 
   return (

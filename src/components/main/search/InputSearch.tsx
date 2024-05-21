@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../../../context/AppContext';
 
-const InputSearch: React.FC = () => {
+const InputSearch = () => {
   const { updateUser } = useContext(UserContext);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -5,7 +5,7 @@ interface Props {
   userData: UserData;
 }
 
-const Statistics: React.FC<Props> = ({ userData }) => {
+const Statistics = ({ userData }: Props) => {
   const { public_repos, followers, following } = userData;
 
   return (

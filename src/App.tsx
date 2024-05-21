@@ -4,7 +4,7 @@ import Header from './components/header';
 import Main from './components/main';
 import { ThemeContext } from './context/AppContext';
 
-const App: React.FC = () => {
+const App = () => {
   const { theme } = useContext(ThemeContext);
 
   const themeClass = theme === 'dark' ? 'dark' : 'light';

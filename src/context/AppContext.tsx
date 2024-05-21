@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
+import { UserData } from '../types/types';
 
 interface ThemeContextProps {
   theme: string;
@@ -7,7 +8,7 @@ interface ThemeContextProps {
 
 interface UserContextProps {
   user: string;
-  userData: object;
+  userData?: UserData;
   userDataError: boolean;
   updateUser: (value: string) => void;
   updateUserData: () => void;
@@ -38,7 +39,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
 const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState('octocat');
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState<UserData>();
   const [userDataError, setUserDataError] = useState(false);
 
   const updateUser = (value: string) => {

@@ -6,8 +6,8 @@ interface Props {
   userData: UserData;
 }
 
-const Profile: React.FC<Props> = ({ userData }) => {
-  const { avatar_url, name, login, created_at }: UserData = userData;
+const Profile = ({ userData }: Props) => {
+  const { avatar_url, name, login, created_at } = userData;
 
   return (
     <div className='flex md:col-span-1 md:col-start-2'>

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../../../context/AppContext';
 
-const ButtonSearch: React.FC = () => {
+const ButtonSearch = () => {
   const { updateUserData } = useContext(UserContext);
 
   const handleButton = () => {

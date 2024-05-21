@@ -1,7 +1,7 @@
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Loader: React.FC = () => (
+const Loader = () => (
   <div className='mt-[50px] text-center'>
     <FontAwesomeIcon
       className='size-[70px] text-text_primary dark:text-white'

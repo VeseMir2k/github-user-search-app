@@ -5,9 +5,11 @@ interface Props {
   icon: IconDefinition;
   text: string;
   link?: string;
+  colStart: string;
+  rowStart: string;
 }
 
-const InfoSection: React.FC<Props> = ({ icon, text, link }) => {
+const InfoSection = ({ icon, text, link, colStart, rowStart }: Props) => {
   const textElement = link ? (
     <a className='hover:underline' href={link}>
       {text}
@@ -15,16 +17,22 @@ const InfoSection: React.FC<Props> = ({ icon, text, link }) => {
   ) : (
     <span>{text}</span>
   );
+
   const notAvailableElement = <span>Not Available</span>;
 
   return (
     <p
-      className={`flex text-sm sm:text-base ${text ? 'text-text_secondary dark:text-white' : 'dark:text-grey_dark text-grey'}`}
+      className={`
+        flex text-sm sm:col-span-1 sm:row-span-1 sm:text-base
+        sm:col-start-${colStart}
+        sm:row-start-${rowStart}
+        ${text ? 'text-text_secondary dark:text-white' : 'text-grey dark:text-grey_dark'}
+      `}
     >
-      <div className='mr-[16px] w-[20px]'>
+      <span className='mr-[16px] w-[20px]'>
         <FontAwesomeIcon className='text-[16px]' icon={icon} />
-      </div>
-      {!text ? notAvailableElement : textElement}
+      </span>
+      {text ? textElement : notAvailableElement}
     </p>
   );
 };
