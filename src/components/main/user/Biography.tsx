@@ -1,6 +1,6 @@
-interface Props {
-  bio: string;
-}
+import { UserData } from '../../../types/types';
+
+type Props = Pick<UserData, 'bio'>;
 
 const Biography = ({ bio }: Props) => {
   return (
