@@ -1,6 +1,6 @@
-interface Props {
-  avatar_url: string;
-}
+import { UserData } from '../../../../types/types';
+
+type Props = Pick<UserData, 'avatar_url'>;
 
 const Avatar = ({ avatar_url }: Props) => {
   return (
