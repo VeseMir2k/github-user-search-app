@@ -33,7 +33,8 @@ const InfoSection = ({ icon, text, link, colStart, rowStart }: Props) => {
   return (
     <p
       className={`
-        flex text-sm sm:col-span-1 sm:row-span-1 sm:text-base
+        flex text-sm leading-3 sm:col-span-1 sm:row-span-1
+        sm:text-base
         ${colStartVariants[colStart]}
         ${rowStartVariants[rowStart]}
         ${text ? 'text-text_secondary dark:text-white' : 'text-grey dark:text-grey_dark'}

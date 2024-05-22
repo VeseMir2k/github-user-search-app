@@ -11,7 +11,7 @@ const SwitchTheme = () => {
       onClick={() => toggleTheme()}
       className='flex text-text_secondary hover:text-text_primary dark:text-white dark:hover:text-[#90A4D4]'
     >
-      <span className='mr-[16px] text-sm font-bold tracking-[2.5px]'>
+      <span className='mr-[16px] text-sm font-bold leading-5 tracking-[2.5px]'>
         {theme === 'dark' ? 'LIGHT' : 'DARK'}
       </span>
 
