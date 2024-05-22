@@ -17,6 +17,6 @@ export const fetchUserData = async (username: string): Promise<fetchUserDataInte
     return { data };
   } catch (error) {
     console.error('Error fetching user data:', error);
-    return { error: error.message };
+    return { error: (error as Error).message };
   }
 };

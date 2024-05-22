@@ -7,7 +7,7 @@ type Props = Pick<UserData, 'blog' | 'location' | 'twitter_username' | 'company'
 
 const Info = ({ blog, location, twitter_username, company }: Props) => {
   return (
-    <div className='mt-[24px] flex flex-col gap-[16px] sm:grid md:col-span-1 md:col-start-2'>
+    <div className='mt-[24px] flex flex-col gap-[16px] sm:grid sm:gap-[20px] md:col-span-1 md:col-start-2'>
       <InfoSection icon={faLocationDot} text={location} colStart='1' rowStart='1' />
       <InfoSection icon={faLink} text={blog} link={blog} colStart='1' rowStart='2' />
       <InfoSection

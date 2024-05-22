@@ -24,6 +24,7 @@ const InfoSection = ({ icon, text, link, colStart, rowStart }: Props) => {
     1: 'sm:col-start-1',
     2: 'sm:col-start-2',
   };
+
   const rowStartVariants: Record<string, string> = {
     1: 'sm:row-start-1',
     2: 'sm:row-start-2',
